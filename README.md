@@ -85,3 +85,16 @@ El proyecto usa `base: './'` en `vite.config.js` para que los assets funcionen t
 No subas `node_modules/` ni `dist/` al repositorio si vas a construir en Actions. Si publicas manualmente, sube el contenido de `dist/` a la rama o carpeta que use Pages.
 
 Si después de desplegar sigues viendo el CSS antiguo, fuerza recarga (Ctrl+Shift+R): GitHub Pages cachea los assets con hash y a veces tarda un minuto en actualizar.
+
+## Versión estática sin Vite (GitHub Pages)
+
+La carpeta `docs/` contiene el sitio ya construido: HTML, CSS y JS. No necesita Vite, `node_modules` ni compilación para publicarse.
+
+1. Sube el repositorio a GitHub.
+2. En Settings → Pages, elige **Deploy from a branch**.
+3. Selecciona la rama principal y la carpeta **`/docs`**.
+4. Guarda y espera a que GitHub Pages publique.
+
+El build ya usa rutas relativas (`base: './'`) y `docs/.nojekyll`, así que funciona en `usuario.github.io/repositorio/`.
+
+Si cambias el diseño, tendrías que volver a generar `docs/` desde la fuente con `npm run build` y copiar `dist/` a `docs/`. Si no vas a volver a tocar el diseño, puedes usar directamente `docs/` y olvidarte de Vite.
