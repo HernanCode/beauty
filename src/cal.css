@@ -1,0 +1,274 @@
+.cal-page {
+  min-height: 100vh;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+.cal-topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: var(--header-height);
+  padding: 0 var(--gutter-safe-right) 0 var(--gutter-safe-left);
+  border-bottom: 1px solid var(--color-border-hairline);
+}
+
+.cal-topbar__back,
+.cal-topbar__tag {
+  font-family: var(--font-label);
+  font-size: 11.5px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.cal-topbar__back {
+  justify-self: start;
+}
+
+.cal-topbar__logo {
+  justify-self: center;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cal-topbar__tag {
+  justify-self: end;
+}
+
+/* Composición principal: 40 / 60 */
+.cal-booking {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+  width: min(100% - 64px, 1360px);
+  margin: 0 auto;
+  padding: 56px 0 80px;
+}
+
+.cal-booking__intro {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.cal-label {
+  margin: 0 0 18px;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.cal-booking__title {
+  max-width: 440px;
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--color-text-primary);
+}
+
+.cal-booking__lead {
+  max-width: 360px;
+  margin: 0 0 40px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.32;
+  color: var(--color-text-secondary);
+}
+
+/* Lista de servicios */
+.cal-services {
+  max-width: 480px;
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+.cal-service {
+  display: block;
+  width: calc(100% + 24px);
+  margin-inline: -12px;
+  padding: 20px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--color-border-hairline);
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 400ms var(--ease-out-expo);
+}
+
+.cal-service:hover,
+.cal-service.is-active {
+  background-color: var(--color-bg-muted);
+}
+
+.cal-service__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.cal-service__meta {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-label);
+  font-size: 11.5px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.cal-service__description {
+  display: block;
+  max-width: 90%;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--color-text-secondary);
+}
+
+/* Columna del calendario */
+.cal-booking__calendar {
+  position: sticky;
+  top: 24px;
+  min-width: 0;
+}
+
+.cal-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 620px;
+  padding: 32px;
+  border: 1px solid var(--color-border-hairline);
+  background-color: var(--color-bg-base);
+  text-align: center;
+}
+
+.cal-placeholder p {
+  max-width: 300px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  color: var(--color-text-secondary);
+  text-wrap: balance;
+}
+
+.cal-embed-host {
+  min-height: 760px;
+}
+
+.cal-embed-host[hidden],
+.cal-placeholder[hidden] {
+  display: none;
+}
+
+.cal-inline {
+  width: 100%;
+  min-height: 760px;
+}
+
+.cal-inline iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 760px !important;
+  border: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .cal-booking {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: min(100% - 48px, 1360px);
+    padding: 32px 0 64px;
+  }
+
+  .cal-booking__intro {
+    padding-top: 0;
+  }
+
+  .cal-booking__title {
+    max-width: none;
+    font-size: clamp(2.5rem, 9vw, 3.25rem);
+  }
+
+  .cal-booking__lead {
+    margin-bottom: 32px;
+  }
+
+  .cal-services {
+    max-width: none;
+  }
+
+  .cal-booking__calendar {
+    position: static;
+  }
+
+  .cal-placeholder {
+    min-height: 360px;
+  }
+
+  .cal-embed-host,
+  .cal-inline,
+  .cal-inline iframe {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cal-topbar {
+    grid-template-columns: auto 1fr;
+    min-height: 72px;
+    padding-inline: 16px;
+  }
+
+  .cal-topbar__back {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .cal-topbar__logo {
+    grid-column: 2;
+    justify-self: end;
+    font-size: 16px;
+  }
+
+  .cal-topbar__tag {
+    display: none;
+  }
+
+  .cal-booking {
+    width: min(100% - 40px, 1360px);
+    padding-top: 28px;
+  }
+
+  .cal-service {
+    padding: 18px 8px;
+    width: calc(100% + 16px);
+    margin-inline: -8px;
+  }
+
+  .cal-service__name {
+    font-size: 23px;
+  }
+
+  .cal-service__description {
+    max-width: 100%;
+  }
+}

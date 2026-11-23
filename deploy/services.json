@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Facial signature — 85 €",
+    "duration_minutes": 60,
+    "description": "Desde 85 € · Cabina individual · Cuidado facial",
+    "price": 85
+  },
+  {
+    "name": "Ritual de luz — 95 €",
+    "duration_minutes": 75,
+    "description": "Desde 95 € · Cabina individual · Vitamina C",
+    "price": 95
+  },
+  {
+    "name": "Limpieza profunda — 70 €",
+    "duration_minutes": 50,
+    "description": "Desde 70 € · Cabina individual · Poros y textura",
+    "price": 70
+  },
+  {
+    "name": "Masaje craneofacial — 65 €",
+    "duration_minutes": 45,
+    "description": "Desde 65 € · Camilla · Tensión y descanso",
+    "price": 65
+  },
+  {
+    "name": "Ritual corporal — 120 €",
+    "duration_minutes": 90,
+    "description": "Desde 120 € · Camilla · Cuerpo y respiración",
+    "price": 120
+  }
+]

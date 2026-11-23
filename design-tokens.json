@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "name": "Editorial Warm Minimal",
+    "version": "1.0.0",
+    "language_of_notes": "es",
+    "reference_viewport_px": { "width": 1905, "height": 923, "note": "Ancho útil de las capturas (≈1920 menos la barra de scroll). Todas las medidas 'observed' y 'estimated' en px se refieren a este viewport." },
+    "source_legend": {
+      "observed": "Leído directamente de las capturas: textos, posiciones, proporciones y medidas en píxeles.",
+      "estimated": "Estimado visualmente (colores, tamaños de fuente, tracking, opacidades). Margen de error aproximado ±10 %. Ajustar por comparación visual con las referencias.",
+      "proposed": "No deducible de capturas estáticas (hover, focus, movimiento, responsive, secciones no mostradas). Valores conservadores y coherentes con el estilo; NO proceden de la referencia."
+    },
+    "rule": "Este archivo es la fuente de verdad de estilos. No usar colores, fuentes, tamaños, radios ni sombras que no estén aquí."
+  },
+
+  "color": {
+    "background": {
+      "base":   { "hex": "#E8DFD0", "rgb": [232, 223, 208], "source": "estimated", "usage": "Fondo de página, header sólido, botón primario, widget de reseñas" },
+      "muted":  { "hex": "#D6CDBF", "rgb": [214, 205, 191], "source": "estimated", "usage": "Botones de flecha del carrusel" },
+      "inverse":{ "hex": "#1F1814", "rgb": [31, 24, 20],    "source": "proposed",  "usage": "Fondo oscuro para secciones no presentes en la referencia (menú overlay, footer). Derivado del scrim." }
+    },
+    "text": {
+      "primary":      { "hex": "#2B221C", "rgb": [43, 34, 28],    "source": "estimated", "usage": "Titulares, logo y enlaces sobre fondo claro" },
+      "secondary":    { "hex": "#4A3D34", "rgb": [74, 61, 52],    "source": "estimated", "usage": "Párrafos y subtítulos sobre fondo claro" },
+      "onDark":       { "hex": "#EFE7DA", "rgb": [239, 231, 218], "source": "estimated", "usage": "Titulares, logo, menú y párrafos sobre imagen o fondo oscuro" },
+      "onDarkMuted":  { "hex": "#EFE7DA", "rgb": [239, 231, 218], "opacity": 0.88, "source": "estimated", "usage": "Etiquetas pequeñas y metadatos sobre imagen" }
+    },
+    "accent": {
+      "star": { "hex": "#6B4733", "rgb": [107, 71, 51], "source": "estimated", "usage": "Estrellas del widget de reseñas" }
+    },
+    "border": {
+      "hairline":       { "value": "rgba(43, 34, 28, 0.15)", "source": "estimated", "usage": "Línea del header sólido y divisor interno del widget de reseñas" },
+      "hairlineOnDark": { "value": "rgba(239, 231, 218, 0.30)", "source": "proposed", "usage": "Líneas sobre fondo oscuro" }
+    },
+    "overlay": {
+      "heroBase":  { "value": "rgba(32, 26, 22, 0.40)", "source": "estimated", "usage": "Velo uniforme sobre imágenes a pantalla completa para dar contraste al texto crema" },
+      "heroDeep":  { "value": "rgba(32, 26, 22, 0.50)", "source": "estimated", "usage": "Variante más densa para el hero principal (el cielo y los bordes se ven más oscuros)" },
+      "cardBottom":{ "value": "linear-gradient(to top, rgba(32, 26, 22, 0.55) 0%, rgba(32, 26, 22, 0) 45%)", "source": "estimated", "usage": "Degradado en la parte inferior de las tarjetas del carrusel para legibilidad del texto" }
+    },
+    "brand": {
+      "googleG": { "value": ["#4285F4", "#EA4335", "#FBBC05", "#34A853"], "source": "observed", "usage": "Solo el logotipo de Google en el widget de reseñas; usar el SVG oficial multicolor" }
+    },
+    "state": {
+      "focusRingOnLight": { "value": "#2B221C", "source": "proposed" },
+      "focusRingOnDark":  { "value": "#EFE7DA", "source": "proposed" },
+      "error":   { "value": null, "source": "not_observed", "note": "No aparece en las capturas. Si hace falta, definirlo con el cliente; no inventar colores semánticos." },
+      "success": { "value": null, "source": "not_observed", "note": "Ídem." }
+    }
+  },
+
+  "typography": {
+    "family": {
+      "display": {
+        "stack": "\"Cormorant Garamond\", \"Cormorant\", \"Times New Roman\", serif",
+        "source": "estimated",
+        "note": "Serif de alto contraste, fina y elegante, usada en logo, titulares, enlaces, botones, precios y metadatos. La tipografía exacta no es identificable; Cormorant Garamond (400/500) es la equivalencia libre más cercana. Alternativa: Gilda Display."
+      },
+      "label": {
+        "stack": "\"Hanken Grotesk\", \"Inter\", system-ui, sans-serif",
+        "source": "estimated",
+        "note": "Sans geométrica pequeña, solo en mayúsculas con tracking amplio, para etiquetas y el texto secundario del widget de reseñas."
+      }
+    },
+    "weight": {
+      "display": { "value": 400, "source": "estimated", "note": "Contraste fino. Nunca bold. Si se usa Cormorant Garamond, probar 500 si el trazo se ve demasiado débil." },
+      "label":   { "value": 400, "source": "estimated" }
+    },
+    "scale": {
+      "displayXL": { "family": "display", "sizePx": 140, "lineHeight": 0.95, "letterSpacingEm": -0.01, "transform": "uppercase", "align": "center", "color": "text.onDark", "source": "estimated", "usage": "Titular del hero principal (2 líneas). Altura de mayúscula ≈97 px.", "fluid": { "value": "clamp(3.5rem, 7.3vw, 8.75rem)", "source": "proposed" } },
+      "displayL":  { "family": "display", "sizePx": 80,  "lineHeight": 0.92, "letterSpacingEm": -0.01, "transform": "uppercase", "align": "center", "color": "text.onDark | text.primary", "source": "estimated", "usage": "Titular de sección sobre imagen (2 líneas) y titular de sección sobre fondo claro (1 línea). Altura de mayúscula ≈54 px.", "fluid": { "value": "clamp(2.5rem, 4.2vw, 5rem)", "source": "proposed" } },
+      "lead":      { "family": "display", "sizePx": 19,  "lineHeight": 1.32, "letterSpacingEm": 0, "transform": "none", "align": "center", "color": "text.secondary", "maxWidthPx": 460, "source": "estimated", "usage": "Subtítulo bajo el titular de sección (2 líneas)" },
+      "heroParagraph": { "family": "display", "sizePx": 20, "lineHeight": 1.28, "letterSpacingEm": 0, "transform": "none", "align": "left", "color": "text.onDark", "maxWidthPx": 240, "source": "estimated", "usage": "Párrafo corto anclado abajo a la izquierda del hero (3 líneas)" },
+      "logo":      { "family": "display", "sizePx": 24,  "lineHeight": 1, "letterSpacingEm": -0.01, "transform": "uppercase", "source": "estimated", "usage": "Logotipo de texto centrado en el header. Ancho ≈92 px para 7 letras." },
+      "navLink":   { "family": "display", "sizePx": 17,  "lineHeight": 1, "letterSpacingEm": 0, "transform": "none", "source": "estimated", "usage": "Menú, 'Check Availability', 'Explore All Rooms', texto de botón" },
+      "cardTitle": { "family": "display", "sizePx": 30,  "lineHeight": 1.05, "letterSpacingEm": 0, "transform": "uppercase", "color": "text.onDark", "source": "estimated", "usage": "Nombre en la tarjeta activa. En tarjetas inactivas se reduce solo por scale(0.8) → ≈24 px." },
+      "cardMeta":  { "family": "display", "sizePx": 15,  "lineHeight": 1.3, "letterSpacingEm": 0, "transform": "none", "color": "text.onDark", "source": "estimated", "usage": "Línea de metadatos de la tarjeta (invitados · m² · vista)" },
+      "cardPrice": { "family": "display", "sizePx": 19,  "lineHeight": 1.2, "letterSpacingEm": 0, "transform": "none", "color": "text.onDark", "source": "estimated", "usage": "Precio 'From €420/Night' abajo a la derecha de la tarjeta" },
+      "label":     { "family": "label",   "sizePx": 11.5,"lineHeight": 1.4, "letterSpacingEm": 0.08, "transform": "uppercase", "color": "text.onDarkMuted", "source": "estimated", "usage": "Etiquetas laterales y eyebrow del hero (GARDEN SPA, DAILY RITUALS, A PRIVATE RETREAT, SERRA DE TRAMUNTANA, MALLORCA, SPAIN)" },
+      "ratingValue":{ "family": "display", "sizePx": 56,  "lineHeight": 1, "letterSpacingEm": 0, "color": "text.primary", "source": "estimated", "usage": "'4.9' en el widget de reseñas" },
+      "ratingScale":{ "family": "display", "sizePx": 15,  "lineHeight": 1, "color": "text.secondary", "source": "estimated", "usage": "'/5.0' en superíndice junto al valor" },
+      "ratingTitle":{ "family": "display", "sizePx": 17,  "lineHeight": 1.2, "color": "text.primary", "source": "estimated", "usage": "'Excellent'" },
+      "ratingMeta": { "family": "label",   "sizePx": 11,  "lineHeight": 1.3, "letterSpacingEm": 0, "transform": "none", "color": "text.secondary", "source": "estimated", "usage": "'Based on 284 reviews'" }
+    },
+    "responsiveNote": { "source": "proposed", "value": "Los valores 'fluid' son propuestas para escalar sin saltos. En 1905 px deben dar exactamente los tamaños de desktop de arriba." }
+  },
+
+  "layout": {
+    "pageGutterPx": { "value": 32, "source": "observed", "note": "Margen lateral del header y del widget; también el padding interno de las tarjetas." },
+    "headerHeightPx": { "value": 86, "source": "observed" },
+    "contentMaxWidthPx": { "value": null, "source": "not_observed", "note": "Las composiciones mostradas son a sangre (full-bleed) con elementos centrados. No hay contenedor máximo visible." },
+    "composition": { "source": "observed", "value": "Eje central estricto: titulares, botón y subtítulos centrados. Información secundaria en las esquinas del viewport (párrafo abajo-izquierda, widget abajo-derecha) y etiquetas flanqueando el titular a ambos lados." },
+    "heroHeight": { "value": "100svh", "source": "proposed", "note": "Las capturas de hero ocupan todo el alto visible." },
+    "heroLabelsPlacement": { "source": "observed", "value": "Dos etiquetas pequeñas a la misma altura, una a cada lado del titular, centradas verticalmente en el hueco entre las dos líneas (hero principal) o en la primera línea (sección de bienestar). Separación horizontal respecto al titular ≈ 60–120 px." },
+    "carousel": {
+      "activeSlide": { "widthPx": 800, "heightPx": 600, "aspectRatio": "4 / 3", "source": "observed" },
+      "inactiveScale": { "value": 0.8, "source": "observed", "note": "Altura 480 frente a 600. Se escala toda la tarjeta (imagen y texto) desde el centro." },
+      "slideGapPx": { "value": 48, "source": "estimated", "note": "Hueco nominal entre diapositivas antes de escalar; el hueco visual entre tarjeta activa y vecina es ≈132 px." },
+      "arrowOffsetPx": { "value": 48, "source": "observed", "note": "Cada flecha está a 48 px del borde de la tarjeta activa, centrada en el hueco visual y alineada verticalmente con el centro de la tarjeta." },
+      "cardPaddingPx": { "value": 32, "source": "observed" },
+      "neighborsVisible": { "value": "Una tarjeta parcial a cada lado, recortada por el borde del viewport", "source": "observed" },
+      "inactiveOpacity": { "value": 1, "source": "observed", "note": "Las vecinas no se atenúan; solo se reducen." }
+    },
+    "sectionHeader": {
+      "gapHeadingToLeadPx": { "value": 28, "source": "estimated" },
+      "gapLeadToLinkPx": { "value": 55, "source": "estimated" },
+      "gapLinkToCarouselPx": { "value": 98, "source": "estimated" }
+    },
+    "grid": { "columns": 12, "gutterPx": 24, "source": "proposed", "note": "Las capturas no muestran rejilla de columnas. Solo para secciones adicionales." },
+    "breakpoints": {
+      "sm": { "minWidthPx": 640,  "source": "proposed" },
+      "md": { "minWidthPx": 768,  "source": "proposed" },
+      "lg": { "minWidthPx": 1024, "source": "proposed" },
+      "xl": { "minWidthPx": 1280, "source": "proposed" },
+      "2xl":{ "minWidthPx": 1536, "source": "proposed" }
+    }
+  },
+
+  "spacing": {
+    "baseUnitPx": 8,
+    "scalePx": [4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192],
+    "observedValuesPx": [8, 32, 48],
+    "sectionPaddingY": { "value": "clamp(6rem, 12vw, 12rem)", "source": "proposed", "note": "No visible en las capturas (están recortadas). Generoso: es parte del lenguaje." },
+    "source": "proposed"
+  },
+
+  "shape": {
+    "radius": { "all": 0, "source": "observed", "note": "Botones, tarjetas, widget y flechas tienen esquinas rectas. No usar border-radius." },
+    "borderWidthPx": { "hairline": 1, "source": "estimated" }
+  },
+
+  "elevation": {
+    "shadow": { "all": "none", "source": "observed", "note": "Sin sombras en tarjetas, botones ni widget. La profundidad la dan las imágenes, el overlay y el espacio." },
+    "headerSolidSeparator": { "value": "0 1px 0 rgba(43, 34, 28, 0.15)", "source": "estimated", "note": "Línea fina bajo el header sólido (offset 0/1, blur 0, spread 0, opacidad .15)." }
+  },
+
+  "iconography": {
+    "style": { "value": "Lineal, trazo fino (1.5 px), terminales rectos, sin relleno, hereda color del texto", "source": "estimated" },
+    "icons": {
+      "menu":     { "description": "Dos líneas horizontales paralelas", "widthPx": 20, "gapPx": 6, "strokePx": 1.2, "source": "observed" },
+      "arrowRight": { "sizePx": 16, "strokePx": 1.5, "source": "observed", "usage": "Enlace 'Explore All Rooms' y flecha derecha del carrusel" },
+      "arrowLeft":  { "sizePx": 16, "strokePx": 1.5, "source": "observed", "usage": "Flecha izquierda del carrusel" },
+      "arrowUpRight": { "sizePx": 12, "strokePx": 1.4, "source": "observed", "usage": "Tras 'Check Availability'" },
+      "star": { "sizePx": 14, "gapPx": 2, "fill": "accent.star", "source": "estimated", "usage": "5 estrellas rellenas en el widget" },
+      "googleG": { "sizePx": 16, "source": "observed" }
+    }
+  },
+
+  "components": {
+    "header": {
+      "heightPx": 86,
+      "paddingInlinePx": 32,
+      "layout": "Tres zonas: izquierda (menú), centro (logo), derecha (enlace de reserva)",
+      "menuTrigger": { "contents": "icono menu + etiqueta 'Menu' (navLink)", "gapPx": 10, "source": "observed" },
+      "rightLink": { "contents": "texto navLink + icono arrowUpRight", "gapPx": 8, "source": "observed" },
+      "states": {
+        "overlay": { "background": "transparent", "textColor": "text.onDark", "source": "observed", "note": "Sobre el hero principal." },
+        "solid":   { "background": "background.base", "textColor": "text.primary", "borderBottom": "elevation.headerSolidSeparator", "source": "observed", "note": "Visible sobre secciones posteriores." },
+        "switchTrigger": { "value": "scrollY > 24px", "source": "proposed" }
+      }
+    },
+    "buttonPrimary": {
+      "background": "background.base",
+      "color": "text.primary",
+      "typography": "navLink",
+      "heightPx": 54,
+      "paddingInlinePx": 24,
+      "radius": 0,
+      "border": "none",
+      "shadow": "none",
+      "measuredExample": { "widthPx": 167, "heightPx": 54, "label": "Explore Wellness" },
+      "source": "observed",
+      "states": {
+        "hover":    { "background": "#F1EADF", "transition": "background-color 400ms", "source": "proposed" },
+        "focusVisible": { "outline": "1px solid state.focusRingOnDark", "outlineOffsetPx": 3, "source": "proposed" },
+        "active":   { "transform": "scale(0.98)", "source": "proposed" },
+        "disabled": { "opacity": 0.5, "cursor": "not-allowed", "source": "proposed" }
+      }
+    },
+    "linkText": {
+      "typography": "navLink",
+      "color": "text.primary | text.onDark según fondo",
+      "decoration": "ninguna en reposo",
+      "source": "observed",
+      "states": {
+        "hover": { "value": "subrayado de 1px que se dibuja de izquierda a derecha en 400 ms", "source": "proposed" },
+        "focusVisible": { "outline": "1px solid currentColor", "outlineOffsetPx": 4, "source": "proposed" }
+      }
+    },
+    "linkArrow": {
+      "contents": "texto navLink + arrowRight a 8 px",
+      "example": "Explore All Rooms →",
+      "source": "observed",
+      "states": { "hover": { "value": "la flecha se desplaza 4 px a la derecha", "source": "proposed" } }
+    },
+    "carouselArrowButton": {
+      "sizePx": 36,
+      "background": "background.muted",
+      "color": "text.primary",
+      "radius": 0,
+      "icon": "arrowLeft | arrowRight 16px",
+      "source": "observed",
+      "states": {
+        "hover": { "background": "#CCC2B3", "transition": "background-color 300ms", "source": "proposed" },
+        "focusVisible": { "outline": "1px solid state.focusRingOnLight", "outlineOffsetPx": 3, "source": "proposed" },
+        "disabled": { "opacity": 0.4, "source": "proposed" }
+      }
+    },
+    "card": {
+      "name": "Tarjeta de carrusel",
+      "aspectRatio": "4 / 3",
+      "radius": 0,
+      "overlay": "overlay.cardBottom",
+      "paddingPx": 32,
+      "textLayout": "Abajo-izquierda: cardTitle sobre cardMeta (separación ≈10 px). Abajo-derecha: cardPrice alineado a la base de cardMeta.",
+      "source": "observed",
+      "states": {
+        "active":   { "scale": 1, "source": "observed" },
+        "inactive": { "scale": 0.8, "source": "observed" },
+        "hover":    { "value": "imagen interior scale 1.03 en 1200 ms", "source": "proposed" }
+      }
+    },
+    "ratingWidget": {
+      "widthPx": 296,
+      "heightPx": 131,
+      "background": "background.base",
+      "radius": 0,
+      "shadow": "none",
+      "position": "Abajo-derecha del hero, a 32 px del borde derecho y ≈32 px del inferior",
+      "paddingPx": 12,
+      "structure": "Fila superior: 5 estrellas a la izquierda + logo Google a la derecha. Divisor hairline a todo el ancho. Fila inferior: valor grande ('4.9' con '/5.0' como superíndice) a la izquierda; a la derecha, 'Excellent' y debajo 'Based on 284 reviews'.",
+      "source": "observed"
+    },
+    "form": {
+      "source": "not_observed",
+      "note": "No hay formularios en las capturas. Si se necesitan: campos solo con línea inferior hairline, etiqueta 'label', sin radios ni sombras, mismo foco que state.focusRing."
+    }
+  },
+
+  "motion": {
+    "source": "proposed",
+    "note": "El movimiento no es deducible de capturas estáticas. Solo se observa que el carrusel escala las tarjetas vecinas a 0.8 y que el header cambia entre transparente y sólido.",
+    "duration": { "fast": "300ms", "base": "600ms", "slow": "1000ms", "reveal": "1200ms" },
+    "easing": {
+      "outExpo": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "inOutQuart": "cubic-bezier(0.76, 0, 0.24, 1)"
+    },
+    "transitions": {
+      "headerSwitch": "background-color 500ms outExpo, color 500ms outExpo",
+      "carouselSlide": "transform 800ms inOutQuart",
+      "buttonHover": "background-color 400ms outExpo",
+      "linkUnderline": "transform 400ms outExpo"
+    },
+    "scroll": {
+      "smoothScroll": { "library": "Lenis", "lerp": 0.1 },
+      "textReveal": { "from": "translateY(105%)", "to": "translateY(0)", "stagger": "0.08s", "duration": "reveal", "easing": "outExpo", "mask": "overflow:hidden por línea" },
+      "imageReveal": { "from": "clip-path: inset(8% 8% 8% 8%) + scale(1.15)", "to": "clip-path: inset(0) + scale(1)", "duration": "reveal" },
+      "parallax": { "maxTravelPercent": 8 },
+      "heroExit": { "imageScaleTo": 1.08, "contentOpacityTo": 0, "contentTranslateYPx": -40 }
+    },
+    "reducedMotion": "Con prefers-reduced-motion: reduce, desactivar smooth scroll, parallax, clip-path y escalas; mantener solo fundidos de opacidad de 200 ms."
+  },
+
+  "hierarchy": {
+    "source": "observed",
+    "levels": [
+      { "rank": 1, "role": "Titular de hero / sección", "token": "displayXL | displayL", "note": "Domina siempre; es lo primero que se lee." },
+      { "rank": 2, "role": "Acción principal", "token": "buttonPrimary | linkArrow", "note": "Un único CTA por pantalla." },
+      { "rank": 3, "role": "Texto de apoyo", "token": "lead | heroParagraph" },
+      { "rank": 4, "role": "Datos de tarjeta", "token": "cardTitle > cardPrice > cardMeta" },
+      { "rank": 5, "role": "Etiquetas contextuales", "token": "label", "note": "Pequeñas, en mayúsculas, periféricas; nunca compiten con el titular." },
+      { "rank": 6, "role": "Prueba social", "token": "ratingWidget" }
+    ]
+  },
+
+  "decoration": {
+    "gradients": { "value": "Solo el degradado inferior de las tarjetas (overlay.cardBottom). Ningún otro.", "source": "observed" },
+    "textures": { "value": "Ninguna", "source": "observed" },
+    "ornaments": { "value": "Ninguno. Sin líneas decorativas, formas ni iconos fuera del listado de iconography.", "source": "observed" },
+    "borders": { "value": "Solo hairlines funcionales (header sólido, divisor del widget).", "source": "observed" }
+  }
+}

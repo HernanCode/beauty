@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# [REEMPLAZAR] con el dominio definitivo
+# Sitemap: https://[REEMPLAZAR].es/sitemap.xml

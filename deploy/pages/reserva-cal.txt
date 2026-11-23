@@ -1,0 +1,2 @@
+Plantilla de página: "Cal.com Demo".
+Campo personalizado: cal_link = tuusuario-de-cal.com (o usuario/evento).
