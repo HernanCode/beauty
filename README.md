@@ -73,3 +73,15 @@ Nombre del salón, barrio, ciudad, dirección, horarios, teléfono, email, redes
 - La página usa una composición 40/60: a la izquierda el titular, la intro y la lista de servicios; a la derecha el calendario de Cal.com, que se carga al elegir un servicio. La lista está definida en `src/js/cal.js` y el enlace base en `data-cal-base` de `cal.html` (`samuel-hernan-dvb4jx`). Si se añaden servicios en Cal, hay que añadirlos también a ese array.
 - El marco exterior es editorial; todo el bloque de reservas (perfil, servicios y calendario) es Cal.com. Usa `cssVarsPerTheme` para vestir el booker con la paleta de la web (fondo, textos, bordes, radios 0).
 - Vite está configurado como multipágina para incluir también `cal.html` en el build.
+
+## Publicar en GitHub Pages
+
+El proyecto usa `base: './'` en `vite.config.js` para que los assets funcionen tanto en la raíz como en `usuario.github.io/repositorio/`.
+
+1. Ejecuta `npm run build`.
+2. Publica el contenido de `dist/`, no la raíz del proyecto. Lo más sencillo es usar GitHub Actions con Pages; también puedes copiar `dist/` a una carpeta `docs/` y configurar Pages desde esa carpeta.
+3. El archivo `public/.nojekyll` evita que GitHub Pages procese los assets con Jekyll.
+
+No subas `node_modules/` ni `dist/` al repositorio si vas a construir en Actions. Si publicas manualmente, sube el contenido de `dist/` a la rama o carpeta que use Pages.
+
+Si después de desplegar sigues viendo el CSS antiguo, fuerza recarga (Ctrl+Shift+R): GitHub Pages cachea los assets con hash y a veces tarda un minuto en actualizar.
